@@ -5,12 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "dist/app.js",
-    "lint": "eslint"
-  },
-  "husky":{
-      "hooks":{
-        "pre-commit": "lint-staged"
-      }
+    "lint": "eslint",
+    "prepare": "husky install"
   },
   "author": "pawan singh parmar",
   "license": "ISC",
@@ -26,7 +22,6 @@
   },
   "lint-staged": {
     "*.js": "eslint --cache --fix",
-    "*.html":"prettier --write"
+    "*.{html,js,css,md}": "prettier --write"
   }
-
 }

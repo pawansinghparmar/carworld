@@ -1,3 +1,4 @@
+import { companyInfo } from "./country.js";
 const cars = document.querySelector('.grid-contain')as HTMLDivElement;
 
 
@@ -11,11 +12,8 @@ export const displayCars = function(){
 		cars.insertAdjacentElement('afterbegin',node);
 	}
 };
-const companyInfo = function(e:Event){
-	const brand = e.target;
-	console.log(brand);
-};
-const carsInfo={
+
+export const carsInfo={
 
 	'Mercedes':{
 		country:'Germany',

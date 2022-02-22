@@ -27,8 +27,7 @@
   text-align: center;
 }
 
-#loginform,
-#signupform {
+#loginform, #signupform {
   font-size: medium;
   padding: 10% 10% 0;
   flex: 50%;

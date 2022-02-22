@@ -2,14 +2,14 @@ import { Iuser, InewUser, userRegistration, loginIntoAcc } from './login.js';
 import {displayCars } from './cars.js';
 import { IValidatable, validityCheck } from './validation.js';
 const uppergrid = document.querySelector('.grid-container')as HTMLDivElement;
-const cars = document.querySelector('#cars')as HTMLDivElement;
+export const cars = document.querySelector('#cars')as HTMLDivElement;
 const signupContainer = document.querySelector('.signup-container')as HTMLDivElement;
 const signupForm = document.querySelector('#signupform')as HTMLFormElement;
 const loginContainer = document.querySelector('.login-container')as HTMLDivElement;
 const loginForm = document.querySelector('#loginform') as HTMLFormElement;
 const createAcc = document.querySelector('h5') as HTMLElement;
 const loginAcc = document.querySelector('.switchtologin') as HTMLElement;
-
+signupContainer.classList.add('hidden');
 // const submitButton = document.querySelector('#submitform')as HTMLButtonElement;
 const rUserPasswordEl = loginForm.querySelector('#password') as HTMLInputElement;
 const rUserMailEl = loginForm.querySelector('#email') as HTMLInputElement;
@@ -19,7 +19,6 @@ const userPassEl = signupForm.querySelector('#upassword') as HTMLInputElement;
 const userCPassEl = signupForm.querySelector('#cpassword') as HTMLInputElement;
 
 signupContainer.classList.add('hidden');
-
 
 export function formReset ():void {
 	userNameEl.value = '',
@@ -101,3 +100,24 @@ createAcc.addEventListener('click', toggle);
 loginAcc.addEventListener('click', toggle);
 loginForm.addEventListener('submit', signinHandle);
 signupForm.addEventListener('submit', signupHandle);
+signupForm.addEventListener('submit', signupHandle);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

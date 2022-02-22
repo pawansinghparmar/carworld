@@ -1,46 +1,43 @@
-import { toggle, formReset } from "./app.js";
-const registeredUser = [
-  {
-    emailId: "pawansinghparmar08@gmail.com",
-    password: "111111",
-  },
-];
+import { toggle, formReset } from './app.js';
+const registeredUser = [{
+        emailId: 'pawansinghparmar08@gmail.com',
+        password: '111111'
+    }];
 export function loginIntoAcc(user) {
-  let isvalid = false;
-  for (const ruser of registeredUser) {
-    if (user.emailId === ruser.emailId && user.password === ruser.password) {
-      console.log("logged in");
-      isvalid = true;
-      break;
+    let isvalid = false;
+    for (const ruser of registeredUser) {
+        if (user.emailId === ruser.emailId && user.password === ruser.password) {
+            console.log('logged in');
+            isvalid = true;
+            break;
+        }
     }
-  }
-  if (!isvalid) {
-    alert("credentials are not matched");
-  }
-  return isvalid;
+    if (!isvalid) {
+        alert('credentials are not matched');
+    }
+    return isvalid;
 }
 export function userRegistration(user) {
-  let success = true;
-  if (user) {
-    const newUser = {
-      emailId: user.mail,
-      password: user.pass,
-    };
-    console.log(
-      newUser === null || newUser === void 0 ? void 0 : newUser.emailId
-    );
-    for (const ruser of registeredUser) {
-      if (ruser.emailId === newUser.emailId) {
-        success = false;
-      }
+    let success = true;
+    if (user) {
+        const newUser = {
+            emailId: user.mail,
+            password: user.pass
+        };
+        console.log(newUser?.emailId);
+        for (const ruser of registeredUser) {
+            if (ruser.emailId === newUser.emailId) {
+                success = false;
+            }
+        }
+        if (success) {
+            registeredUser.push(newUser);
+            console.log(registeredUser);
+            formReset();
+            toggle();
+        }
+        else {
+            alert('Already have an account');
+        }
     }
-    if (success) {
-      registeredUser.push(newUser);
-      console.log(registeredUser);
-      formReset();
-      toggle();
-    } else {
-      alert("Already have an account");
-    }
-  }
 }
